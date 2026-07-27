@@ -3,7 +3,7 @@ import { ShopContext } from '../context/ShopingContext'
 import Tittle from './Tittle';
 
 function CartTotal() {
-    const { currency, delivery_fee, getCartAmount, navigate } =
+    const { currency, delivery_fee, getCartAmount } =
       useContext(ShopContext);
   return (
     <div className="w-full">
@@ -33,14 +33,7 @@ function CartTotal() {
             {currency}
             {getCartAmount() === 0 ? "0" : getCartAmount() + delivery_fee}.00
           </p>
-          <div className="w-full text-end">
-            <button
-              onClick={() => navigate("/place-order")}
-              className="bg-black text-white text-sm my-8 px-8 py-3 active:bg-gray-700 "
-            >
-              PROCEED TO CHECKOUT
-            </button>
-          </div>
+          
         </div>
       </div>
     </div>
