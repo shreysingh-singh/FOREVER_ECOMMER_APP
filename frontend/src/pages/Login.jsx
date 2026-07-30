@@ -35,7 +35,7 @@ function Login() {
         required
       />
       <div className="w-full flex justify-between text-sm mt-[-8px]">
-        <p className="cursor-pointer text-blue-700">Forgot your password</p>
+        {currentState === "Login" ? <p className="cursor-pointer text-blue-700">Forgot your password</p> : ""}
         {currentState === "Login" ? (
           <p
             onClick={() => setCurrentState("Sign Up")}
