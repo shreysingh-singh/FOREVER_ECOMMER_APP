@@ -4,6 +4,7 @@ import 'dotenv/config'
 import connectedDb from "./config/mongoDb.js"
 import connectCloudinary from './config/cloudinary.js';
 import userRouter from './routes/userRouter.js';
+import productRoute from './routes/productRoust.js';
 
 
 // => App Config 
@@ -19,9 +20,7 @@ app.use(cros());
 
 // => Api endpoint 
 app.use('/api/v1/user', userRouter);
-app.get("/" , (req, res) => {
-    res.json("Your Server is Working ")
-});
+app.use('/api/v1/product', productRoute);
 
 
 app.listen(port, () => console.log('YOUR SERVER IS RUNNING AT: '+ port));
